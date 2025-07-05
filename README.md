@@ -1,7 +1,7 @@
 # L2Stream
 A low-latency video streaming solution built with WebRTC.
 
-# How to Use
+## How to Use
 ```
 git clone https://github.com/lunae-f/L2Stream
 cd L2Stream
