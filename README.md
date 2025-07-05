@@ -7,3 +7,5 @@ git clone https://github.com/lunae-f/L2Stream
 cd L2Stream
 docker compose up -d --build
 ```
+サーバーが起動したら
+`https://{サーバーのIPアドレス}/`にアクセス
