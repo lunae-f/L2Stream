@@ -1,0 +1,25 @@
+services:
+  # Webページを配信するNginxサーバー
+  web:
+    build: ./web
+    ports:
+      # HTTP(80)とHTTPS(443)のポートを開ける
+      - "80:80"
+      - "443:443"
+    volumes:
+      # 証明書を保存するボリュームをマウント
+      - certs-volume:/etc/nginx/ssl
+
+  # WebSocketのシグナリングサーバー
+  signaling:
+    build: ./signaling
+    ports:
+      - "8080:8080"
+    volumes:
+      - certs-volume:/usr/src/app/certs:ro
+    # webサービスが起動した後にsignalingを起動するように設定
+    depends_on:
+      - web
+
+volumes:
+  certs-volume:

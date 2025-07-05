@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC P2P Video</title>
+    <style>
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; }
+        .videos { display: flex; gap: 20px; margin-top: 20px; }
+        video { border: 1px solid black; width: 480px; background-color: #333; }
+        button { font-size: 1.2em; padding: 10px 20px; margin-top: 20px; }
+        .notice { margin-top: 15px; padding: 10px; background-color: #f0f8ff; border: 1px solid #add8e6; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>WebRTC P2P Video</h1>
+
+    <div class="notice">
+        <p>
+            最初に、<a href="https://localhost:8080" target="_blank" rel="noopener noreferrer">こちらのリンク</a>を開いてセキュリティ警告を許可してください。
+        </p>
+    </div>
+    <div class="videos">
+        <div>
+            <h2>自分の映像</h2>
+            <video id="localVideo" autoplay playsinline muted></video>
+        </div>
+        <div>
+            <h2>相手の映像</h2>
+            <video id="remoteVideo" autoplay playsinline></video>
+        </div>
+    </div>
+    <button id="startButton">接続開始</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
